@@ -5,7 +5,6 @@ add_library(
     ${PROJECT_NAME}_lib
     Logger.cpp
     Logger.hpp
-    ILogger.hpp
 )
 set_target_properties(${PROJECT_NAME}_lib PROPERTIES LINKER_LANGUAGE CXX)
 target_compile_features(${PROJECT_NAME}_lib PUBLIC cxx_std_14)
