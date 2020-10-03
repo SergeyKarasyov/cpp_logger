@@ -1,0 +1,23 @@
+name: cpp_logger
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        compiler_version:
+          - 7
+          - 8
+        compiler:
+          - gcc
+        build_type:
+          - Release
+      
+    steps:
+    - uses: actions/checkout@v1
+    - name: create build folder
+      run: mkdir build
+    - name : cmake work
+      run: cd build && pwd && ls -la && cmake .. && cmake --build .
